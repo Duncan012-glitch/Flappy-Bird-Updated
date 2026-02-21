@@ -116,8 +116,8 @@
             border-radius: 50%;
             top: 27%;
             left: 25%;
-            -webkit-animation: wingFlap 0.3s ease-in-out;
-            animation: wingFlap 0.3s ease-in-out;
+            -webkit-animation: wingFlap 0.45s ease-in-out;
+            animation: wingFlap 0.45s ease-in-out;
         }
         
         @keyframes wingFlap {
@@ -331,14 +331,14 @@
         let birdX = containerWidth / 8;
         
         let velocity = 0;
-        let gravity = 0.5;
+        let gravity = 0.35;
         let score = 0;
         let gameRunning = false;
         let gameOver = false;
-        const flapStrength = -10;
+        const flapStrength = -8;
         const pipeGap = 120;
         const pipeWidth = 50;
-        const pipeSpeed = 4;
+        const pipeSpeed = 2.5;
         
         let pipes = [];
         let pipeCounter = 0;
@@ -475,9 +475,9 @@
                 return;
             }
             
-            // Create pipes
+            // Create pipes (spawn less frequently to slow pacing)
             pipeCounter++;
-            if (pipeCounter > 80) {
+            if (pipeCounter > 120) {
                 createPipe();
                 pipeCounter = 0;
             }
